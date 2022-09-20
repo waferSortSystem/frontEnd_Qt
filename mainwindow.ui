@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>410</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>晶圆图像拼接控制器</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>511</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QPushButton" name="pushButton_open">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>60</y>
+        <width>130</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>打开项目</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>12</width>
+        <height>12</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_create">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>60</y>
+        <width>130</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>新建项目</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="pushButton_createFromMicro">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>40</y>
+        <width>300</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>从显微镜采集晶圆图像</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_createFromFolder">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>110</y>
+        <width>300</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>从文件夹导入晶圆图像</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_return">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>0</y>
+        <width>40</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>返回</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menu_project">
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>项目</string>
+    </property>
+    <addaction name="action_create"/>
+    <addaction name="action_open"/>
+    <addaction name="action_quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_viewer">
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>视图</string>
+    </property>
+    <widget class="QMenu" name="menu">
+     <property name="title">
+      <string>选择倍数</string>
+     </property>
+     <addaction name="action2"/>
+     <addaction name="action4"/>
+     <addaction name="action8"/>
+     <addaction name="action16"/>
+    </widget>
+    <addaction name="action_zoomIn"/>
+    <addaction name="action_zoomOut"/>
+    <addaction name="action_setStepSize"/>
+    <addaction name="menu"/>
+   </widget>
+   <widget class="QMenu" name="menu_account">
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>账户</string>
+    </property>
+    <addaction name="action_viewAccount"/>
+    <addaction name="action_login"/>
+    <addaction name="action_logout"/>
+   </widget>
+   <widget class="QMenu" name="menu_help">
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_userManual"/>
+   </widget>
+   <addaction name="menu_project"/>
+   <addaction name="menu_viewer"/>
+   <addaction name="menu_account"/>
+   <addaction name="menu_help"/>
+  </widget>
+  <action name="action_create">
+   <property name="text">
+    <string>新建</string>
+   </property>
+  </action>
+  <action name="action_open">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="action_quit">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="action_zoomIn">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>放大</string>
+   </property>
+  </action>
+  <action name="action_zoomOut">
+   <property name="text">
+    <string>缩小</string>
+   </property>
+  </action>
+  <action name="action_setStepSize">
+   <property name="text">
+    <string>设置步长</string>
+   </property>
+  </action>
+  <action name="action_viewAccount">
+   <property name="text">
+    <string>查看账户</string>
+   </property>
+  </action>
+  <action name="action_login">
+   <property name="text">
+    <string>登录/注册</string>
+   </property>
+  </action>
+  <action name="action_logout">
+   <property name="text">
+    <string>登出</string>
+   </property>
+  </action>
+  <action name="action_userManual">
+   <property name="text">
+    <string>使用说明</string>
+   </property>
+  </action>
+  <action name="action2">
+   <property name="text">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="action4">
+   <property name="text">
+    <string>4</string>
+   </property>
+  </action>
+  <action name="action8">
+   <property name="text">
+    <string>8</string>
+   </property>
+  </action>
+  <action name="action16">
+   <property name="text">
+    <string>16</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
